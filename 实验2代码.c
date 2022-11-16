@@ -31,7 +31,7 @@ int auto_create(int n,int max,int mix,int c,char a,char b){
 	float x4,x5,x6;
 	char sum='+',minus='-',multiply='*',except='/';
 	srand((unsigned int)time(NULL));
-	for(i=0;i<n;i++){
+	for(i=0;i<(n*2);i++){
 		if(mix==1){
 			if(a=='n'){
 				x1=rand()%max+1;
