@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "e5ce94a9-e18d-45e1-aeaa-c1e12136d1e0",
+		"name": "问卷",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19049059"
+	},
+	"item": [
+		{
+			"name": "生成二维码",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8363/qrcode/generate",
+					"host": [
+						"localhost"
+					],
+					"port": "8363",
+					"path": [
+						"qrcode",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "创建问卷",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"41\",\r\n    \"remark\":\"描述\",\r\n    \"empId\":\"1\",\r\n    \"details\":[\r\n        {\r\n            \"topicType\":\"1\",\r\n            \"topic\":\"问卷题目\",\r\n            \"values\":[\r\n                {\r\n                    \"optionCode\":\"A\",\r\n                    \"optionValue\":\"选项内容\",\r\n                    \"remark\":\"选项说明\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8363/question/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8363",
+					"path": [
+						"question",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改问卷",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"title\":\"41\",\r\n    \"remark\":\"描述123\",\r\n    \"empId\":\"2\",\r\n    \"details\":[\r\n        {\r\n            \"topicType\":\"1\",\r\n            \"topic\":\"问卷题目123\",\r\n            \"values\":[\r\n                {\r\n                    \"optionCode\":\"B\",\r\n                    \"optionValue\":\"选项内容321\",\r\n                    \"remark\":\"选项说明123\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8363/question/modify",
+					"host": [
+						"localhost"
+					],
+					"port": "8363",
+					"path": [
+						"question",
+						"modify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
